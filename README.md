@@ -14,4 +14,4 @@ Wish you have a nice day.
 
 About Malmo platform: https://github.com/microsoft/malmo
 
-I also put some articles in this it which include my through.(The article is writed with Japanese, maybe I will translate into English)
+I also put some articles in this it which include my through.(The article is writed with Japanese and Chinese, maybe I will translate into English)
