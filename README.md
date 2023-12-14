@@ -15,3 +15,6 @@ Wish you have a nice day.
 About Malmo platform: https://github.com/microsoft/malmo
 
 I also put some articles in this it which include my through.(The article is writed with Japanese and Chinese, maybe I will translate into English)
+
+Here is the picture when I run this py code.<img width="857" alt="截屏2023-12-14 20 11 50" src="https://github.com/tori-hotaru/Malmo-Minecraft-humanlike-boss--option-critic/assets/58972377/ac2f54b4-bbcd-49f3-9291-708e023ad0d6">
+<img width="856" alt="截屏2023-12-14 20 11 59" src="https://github.com/tori-hotaru/Malmo-Minecraft-humanlike-boss--option-critic/assets/58972377/8bdd5b1d-659e-4d94-8e1e-c2088168c297">
