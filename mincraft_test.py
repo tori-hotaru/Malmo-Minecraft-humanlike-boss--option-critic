@@ -5,6 +5,51 @@ import tensorflow as tf
 import random
 import json
 
+missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+            <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            
+              <About>
+                <Summary>Fight for Zombie!</Summary>
+              </About>
+              
+              <ServerSection>
+                <ServerHandlers>
+                  <FlatWorldGenerator generatorString="3;7,220*1,5*3,2;3;,biome_1"/>
+                  <DrawingDecorator>
+                    <DrawCuboid x1="-2" y1="46" z1="-2" x2="7" y2="50" z2="13" type="air" />            <!-- limits of our arena -->
+                    <DrawCuboid x1="-2" y1="45" z1="-2" x2="7" y2="45" z2="13" type="lava" />           <!-- lava floor -->
+                    <DrawCuboid x1="-1"  y1="45" z1="-1"  x2="6" y2="45" z2="12" type="sandstone" />      <!-- floor of the arena -->
+                    <DrawEntity x="3.5" y="46.0" z="10" type="Zombie"/>
+                  </DrawingDecorator>
+                  <ServerQuitFromTimeUp timeLimitMs="30000"/>
+                  <ServerQuitWhenAnyAgentFinishes/>
+                </ServerHandlers>
+              </ServerSection>
+              
+              <AgentSection mode="Survival">
+                <Name>Fighter</Name>
+                <AgentStart>
+                    <Placement x="3.5" y="46.0" z="1.5" pitch="0" yaw="0"/>
+                    <Inventory>
+                      <InventoryItem slot="0" type="diamond_pickaxe"/>
+                    </Inventory>
+                </AgentStart>
+                <AgentHandlers>
+                  <DiscreteMovementCommands/>
+                  <ObservationFromFullStats/>
+                  <ObservationFromNearbyEntities>
+                    <Range name="Zombie" xrange="10" yrange="10" zrange="10"/>
+                  </ObservationFromNearbyEntities>
+                  <RewardForDamagingEntity>
+                    <Mob reward="10" type="Zombie" distribution="EQUAL"/>
+                  </RewardForDamagingEntity>
+                  <RewardForSendingCommand reward="-1" />
+                  <AgentQuitFromTouchingBlockType>
+                    <Block type="lava" />
+                  </AgentQuitFromTouchingBlockType>
+                </AgentHandlers>
+              </AgentSection>
+            </Mission>'''
 
 class MinecraftClient:
     def __init__(self):
